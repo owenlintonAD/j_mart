@@ -10,22 +10,30 @@ import NetflixRecommendation from '../content/netflix_recommendation';
 import PictureOfTheDay from '../content/picture_of_the_day';
 import WordOfTheDay from '../content/word_of_the_day';
 import SongRecommendation from '../content/song_recommendation';
+import CurrentTime from '../content/current_time';
+import Masonry from 'react-masonry-css'
 
 export default function HomePage() {
   return (
-    <Grid container direction='row' spacing={2}>
-      <GridCard><NetflixRecommendation /></GridCard>
-      <GridCard><WordOfTheDay /></GridCard>
-      <GridCard><SongRecommendation /></GridCard>
-      <GridCard><PictureOfTheDay /></GridCard>
-    </Grid>
-  )
-}
+    <Masonry
+      breakpointCols={3}
+      className="my-masonry-grid"
+      columnClassName="my-masonry-grid_column">
+      <PictureOfTheDay />
+      <PictureOfTheDay />
+      <SongRecommendation />
 
-function GridCard({children}) {
-  return (
-    <Grid item xs={6} md={4} lg={3}>
-      {children}
-    </Grid>
-  );
+      <NetflixRecommendation />
+      <WordOfTheDay />
+      <CurrentTime />
+
+      <PictureOfTheDay />
+      <PictureOfTheDay />
+      <PictureOfTheDay />
+
+      <PictureOfTheDay />
+      <PictureOfTheDay />
+      <PictureOfTheDay />
+    </Masonry>
+  )
 }
