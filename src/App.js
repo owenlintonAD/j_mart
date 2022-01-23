@@ -1,11 +1,11 @@
-import './App.css';
-import {Recommender} from './tiles/Recommender'
+import HomePage from './homepage';
+import {DateProvider} from './content/date_context';
 
 function App() {
   return (
-    <div className="App">
-      <Recommender />
-    </div>
+    <DateProvider>
+      <HomePage />
+    </DateProvider>
   );
 }
 
